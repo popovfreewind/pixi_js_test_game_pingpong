@@ -12,6 +12,9 @@ module.exports = (env, argv) => {
             static: path.resolve(__dirname, 'dist'),
             port: 3000,
         },
+        resolve: {
+            extensions: ['.ts', '.js'] // add these extensions
+        },
         module: {
             rules: [
                 {
