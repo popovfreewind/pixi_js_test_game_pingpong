@@ -3,6 +3,12 @@ import GamePad from './GamePad';
 import GameBall from './GameBall';
 
 export default class PingPong {
+    private readonly backgroundColor = '#1099bb';
+    private readonly width = 680;
+    private readonly height = 400;
+    private readonly padWidth = 50;
+    private readonly padHeight = 100;
+    private readonly ballRadius = 10;
     private readonly userPadColor = 0xd622a9;
     private readonly computerPadColor = 0xf88000;
     private readonly ballColor = 0xf0fe00;
@@ -22,15 +28,15 @@ export default class PingPong {
 
     private async init(divContainer: HTMLElement): Promise<void> {
         await this.app.init({
-            background: '#1099bb',
-            width: 680,
-            height: 400
+            background: this.backgroundColor,
+            width: this.width,
+            height: this.height,
         });
         divContainer.appendChild(this.app.canvas);
 
-        this.computerPad.x = this.app.screen.width - this.computerPad.width;
-        this.ball.x = this.app.screen.width / 2;
-        this.ball.y = this.app.screen.height / 2;
+        this.computerPad.x = this.width - this.computerPad.width;
+        this.ball.x = this.width / 2;
+        this.ball.y = this.height / 2;
 
         this.app.stage.addChild(this.userPad, this.computerPad, this.ball);
 
