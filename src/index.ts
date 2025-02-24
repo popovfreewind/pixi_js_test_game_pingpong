@@ -1,5 +1,5 @@
 import './style.css';
-import PingPong from './pingPong/App';
+import PingPong from './game/Game';
 
-const domNode = document.getElementById('root');
-PingPong(domNode);
+const domNode = document.getElementById('root') as HTMLElement;
+new PingPong(domNode);
