@@ -1,6 +1,6 @@
 import { Container, Graphics } from 'pixi.js';
 
-export default class GamePad extends Container {
+export default class GameBall extends Container {
     private color = 0xffffff;
 
     constructor(color: number) {
@@ -11,7 +11,7 @@ export default class GamePad extends Container {
 
     private init() {
         const padGraphics = new Graphics();
-        padGraphics.rect(0, 0, 50, 100);
+        padGraphics.circle(0, 0, 10);
         padGraphics.fill(this.color);
         this.addChild(padGraphics);
     }
